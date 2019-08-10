@@ -50,7 +50,7 @@ export default function SignUp({ navigation }) {
             secureTextEntry
             placeholder="Digite sua senha"
             ref={passwordRef}
-            returnKeyType="next"
+            returnKeyType="send"
             onSubmitEditing={handleSubmit}
           />
 
@@ -58,7 +58,7 @@ export default function SignUp({ navigation }) {
         </Form>
 
         <SignLink onPress={() => navigation.navigate('SignIn')}>
-          <SignLinkText>Já tenho uma conta</SignLinkText>
+          <SignLinkText>Já tenho conta</SignLinkText>
         </SignLink>
       </Container>
     </Background>
