@@ -19,7 +19,7 @@ export function* signIn({ payload }) {
     if (user.provider) {
       Alert.alert(
         'Erro no login',
-        'O usuario não pode ser prestador de serviço'
+        'O usuário não pode ser prestador de serviços'
       );
       return;
     }
@@ -34,7 +34,6 @@ export function* signIn({ payload }) {
       'Falha na autenticação',
       'Houve um erro no login, verifique seus dados'
     );
-
     yield put(signFailure());
   }
 }
@@ -69,13 +68,8 @@ export function setToken({ payload }) {
   }
 }
 
-export function signOut() {
-  // history.push('/');
-}
-
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
-  takeLatest('@auth/SIGN_OUT', signOut),
 ]);
