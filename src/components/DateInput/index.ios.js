@@ -11,14 +11,14 @@ export default function DateInput({ date, onChange }) {
   const [opened, setOpened] = useState(false);
 
   const dateFormatted = useMemo(
-    () => format(date, "dd 'de' MMM 'de' yyyy", { locale: pt }),
+    () => format(date, "dd 'de' MMMM 'de' yyyy", { locale: pt }),
     [date]
   );
 
   return (
     <Container>
       <DateButton onPress={() => setOpened(!opened)}>
-        <Icon name="event" size={20} color="#fff" />
+        <Icon name="event" size={20} color="#FFF" />
         <DateText>{dateFormatted}</DateText>
       </DateButton>
       {opened && (
